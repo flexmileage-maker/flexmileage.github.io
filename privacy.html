@@ -2,27 +2,132 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — FlexMileage</title>
 <style>
-  body { font-family: -apple-system, sans-serif; background:#0D1B3E; color:#F4F7FB; max-width:720px; margin:0 auto; padding:40px 24px; line-height:1.7; }
-  h1 { color:#FFB454; } h2 { color:#FFB454; margin-top:36px; } a { color:#FFB454; }
-  p,li { color:#C4C9D4; }
+  :root {
+    --bg: #0B0E14;
+    --card: #141821;
+    --border: #232838;
+    --text: #E8E9ED;
+    --text-muted: #9CA3AF;
+    --amber: #FFB454;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  .eyebrow {
+    color: var(--amber);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 4px;
+  }
+  .updated {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 36px;
+  }
+  .summary {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-bottom: 40px;
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+  h2 {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 40px 0 12px;
+    color: var(--text);
+  }
+  p { color: var(--text-muted); font-size: 15.5px; margin: 0 0 14px; }
+  a { color: var(--amber); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .back {
+    display: inline-block;
+    margin-bottom: 32px;
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
 </style>
 </head>
 <body>
-<h1>Privacy Policy</h1>
-<p><strong>Last updated: June 2025</strong></p>
-<p>FlexMileage ("the App") is committed to protecting your privacy. This policy explains how we handle your information.</p>
-<h2>What We Collect</h2>
-<p><strong>Nothing.</strong> FlexMileage collects no personal data. We have no servers, no user accounts, and no analytics.</p>
-<h2>Location Data</h2>
-<p>Location permission is required to track mileage. All location data is processed and stored exclusively on your device. We never receive, transmit, or access your location data.</p>
-<h2>Google Drive Backup (Optional)</h2>
-<p>If you choose to enable Google Drive backup, your mileage data is sent directly to your personal Google Drive account using your own Google credentials. FlexMileage does not receive or store a copy of this data. It is stored in a private, app-specific folder in your Drive that only FlexMileage can access.</p>
-<h2>No Third-Party Sharing</h2>
-<p>We do not sell, share, or transmit your data to any third party for any purpose, including advertising.</p>
-<h2>Contact</h2>
-<p>Questions? Email: <a href="mailto:flexmileage@gmail.com">flexmileage@gmail.com</a></p>
-<p><a href="/">← Back to FlexMileage</a></p>
+<div class="wrap">
+  <a class="back" href="/">&larr; FlexMileage</a>
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <div class="updated">Last updated: June 2026</div>
+
+  <div class="summary">
+    FlexMileage is developed and operated by My Digital LLC ("we," "us," "our"). FlexMileage is designed to keep your data on your device. We do not operate servers that store your trips, expenses, or location history. The only data that leaves your device does so because you explicitly choose to back it up to your own Google Drive, or because subscription billing requires it. We never sell your data, and we never share it with advertisers.
+  </div>
+
+  <h2>Information We Collect</h2>
+
+  <p><strong style="color:var(--text)">Location data.</strong> FlexMileage uses your device's GPS to record mileage while you are actively tracking a trip, including when Bluetooth auto-start or Smart Monitor begins a trip automatically based on your movement. Location data is processed and stored entirely on your device using local storage. We do not transmit your location to our servers because we do not operate any servers that receive this data.</p>
+
+  <p>Background location access is required for the App's core function: detecting when you start and stop driving without requiring you to keep the app open. You can disable background location at any time in your device settings, which will disable automatic trip detection but not manual tracking.</p>
+
+  <p><strong style="color:var(--text)">Bluetooth information.</strong> If you pair a vehicle for Bluetooth auto-start, the App stores the device identifier and name of that Bluetooth connection locally on your device. This is used solely to detect when you've connected to your car so tracking can start automatically. This information is never transmitted off your device.</p>
+
+  <p><strong style="color:var(--text)">Trip, expense, and vehicle data.</strong> Trip records (timestamps, mileage, route waypoints, gig classification), expense records (amounts, categories, receipt photos), vehicle information, and odometer readings are stored locally on your device. None of this data is transmitted to us.</p>
+
+  <p><strong style="color:var(--text)">Google Drive backup (optional).</strong> If you choose to enable Google Drive backup, the App requests permission to create and manage a single hidden backup file within your own Google Drive account, using Google's <code>drive.appdata</code> scope. This scope is restricted: it allows the App to access only its own application-specific data folder, never any other files in your Google Drive. Your backup data travels directly between your device and your Google Drive account — it does not pass through any server we operate, and we never receive a copy.</p>
+
+  <p>You may disconnect Google Drive access at any time from Settings, which removes the App's access token from your device. You can also fully revoke access from your Google Account permissions page at <a href="https://myaccount.google.com" target="_blank">myaccount.google.com</a>.</p>
+
+  <p><strong style="color:var(--text)">Subscription and billing information.</strong> Subscriptions are processed through Google Play Billing and RevenueCat, a third-party subscription management service. When you subscribe, RevenueCat receives a device identifier, your subscription status, and transaction metadata from Google Play in order to validate your purchase. RevenueCat does not receive your trip data, location history, or any content you've recorded in the App. We do not have access to your payment card details — those are handled entirely by Google Play. See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's privacy policy</a>.</p>
+
+  <p><strong style="color:var(--text)">Crash and diagnostic information.</strong> We may use standard Android crash reporting to identify and fix bugs. This may include device model and OS version. It does not include your trip data, location history, or personal content.</p>
+
+  <h2>How We Use Information</h2>
+  <p>Information collected is used exclusively to provide mileage tracking functionality, calculate tax deductions based on IRS mileage rates, enable optional cloud backup to your own Google Drive, and validate and manage your subscription. We do not use your data for advertising, do not sell data to third parties, and do not share data with data brokers.</p>
+
+  <h2>Data Retention</h2>
+  <p>Trip and expense records are retained on your device indefinitely unless you delete them. We recommend keeping mileage records for at least three years, consistent with IRS recordkeeping guidance for tax deduction substantiation. You may export or delete your data at any time from Settings.</p>
+  <p>If your subscription lapses, your historical data remains fully accessible in read-only mode — viewable and exportable — but new trip tracking pauses until you resubscribe. We never delete your data due to a lapsed subscription.</p>
+
+  <h2>Your Rights</h2>
+  <p>You may export your complete data as a CSV file at any time from the Tax tab. You may delete your data entirely from Settings &rarr; Data &rarr; Delete All Data, which is irreversible. If you are a California resident, you have rights under the CCPA including the right to know what data is collected and the right to request deletion; since we do not collect personal data on our own servers, exercising these rights primarily means deleting data from your device or disconnecting Google Drive access.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>FlexMileage is not directed at children under 13, and we do not knowingly collect information from children under 13. The App is designed for commercial drivers tracking mileage for tax purposes.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Material changes will be reflected in the "Last updated" date above, and significant changes will be communicated within the App.</p>
+
+  <h2>Contact Us</h2>
+  <p>Questions about this Privacy Policy can be sent through the Contact Us link in Settings, or via the contact form linked from the App.</p>
+
+  <footer>© 2026 My Digital LLC &mdash; FlexMileage &mdash; <a href="/terms.html">Terms of Service</a></footer>
+</div>
 </body>
 </html>
