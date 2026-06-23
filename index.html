@@ -1,49 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="gjbEWCzH4eyrZFSfY2WqbCCTD7suNFU03MTB8mDfrFo" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FlexMileage — Mileage Tracker for Gig Drivers</title>
 <style>
-  body { font-family: -apple-system, sans-serif; background:#0D1B3E; color:#F4F7FB; margin:0; padding:0; }
-  .hero { padding:60px 24px 40px; max-width:680px; margin:0 auto; text-align:center; }
-  h1 { font-size:2.4em; margin-bottom:8px; }
-  h1 span { color:#FFB454; }
-  .sub { color:#8A94A6; font-size:1.1em; margin-bottom:8px; }
-  .trial { display:inline-block; background:#1A2952; border:1px solid #FFB45440; color:#FFB454; font-size:.85em; font-weight:700; padding:6px 16px; border-radius:20px; margin-bottom:36px; }
-  .features { display:grid; grid-template-columns:1fr 1fr; gap:16px; text-align:left; margin:40px 0; }
-  .feat { background:#1A2952; border-radius:12px; padding:20px; }
-  .feat h3 { margin:0 0 8px; color:#FFB454; font-size:1em; }
-  .feat p { margin:0; color:#8A94A6; font-size:.9em; line-height:1.5; }
-  .badge { display:inline-block; background:#FFB454; color:#000; padding:14px 32px; border-radius:10px; font-weight:700; font-size:1.1em; text-decoration:none; margin-top:20px; }
-  .pricing { margin-top:16px; color:#8A94A6; font-size:.85em; }
-  .legal-links { margin-top:48px; padding:20px; border-top:1px solid #232B3D; text-align:center; }
-  .legal-links a { color:#FFB454; text-decoration:none; margin:0 12px; }
-  .legal-links a:hover { text-decoration:underline; }
-  footer { text-align:center; padding:20px; color:#5A6377; font-size:.85em; }
+  :root {
+    --bg: #0B0E14;
+    --card: #141821;
+    --border: #232838;
+    --text: #E8E9ED;
+    --text-muted: #9CA3AF;
+    --amber: #FFB454;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 64px 24px 80px; text-align: center; }
+
+  .eyebrow {
+    color: var(--amber);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 4px;
+    color: var(--text);
+  }
+  h1 span { color: var(--amber); }
+  .sub {
+    color: var(--text-muted);
+    font-size: 17px;
+    margin: 0 auto 16px;
+    max-width: 500px;
+  }
+  .trial-badge {
+    display: inline-block;
+    background: #FFB45415;
+    border: 1px solid #FFB45440;
+    color: var(--amber);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 48px;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    text-align: left;
+    margin: 0 0 48px;
+  }
+  @media (max-width: 480px) { .features { grid-template-columns: 1fr; } }
+  .feat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .feat h3 { margin: 0 0 6px; color: var(--amber); font-size: 14px; }
+  .feat p  { margin: 0; color: var(--text-muted); font-size: 13.5px; line-height: 1.55; }
+
+  .cta-wrap { margin-bottom: 12px; }
+  .badge {
+    display: inline-block;
+    background: var(--amber);
+    color: #000;
+    padding: 16px 36px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 16px;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .badge:hover { opacity: 0.9; }
+  .pricing { color: var(--text-muted); font-size: 13px; margin-top: 10px; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--amber); text-decoration: none; margin: 0 10px; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-<div class="hero">
+<div class="wrap">
+  <div class="eyebrow">Mileage Tracking for Gig Drivers</div>
   <h1>Flex<span>Mileage</span></h1>
-  <p class="sub">The mileage tracker built for gig and commercial drivers.<br>Your data stays on your phone — we never sell it or share it with advertisers.</p>
-  <div class="trial">🎉 14-day free trial — no credit card required</div>
+  <p class="sub">Automatic mileage tracking built for commercial drivers. Your data stays on your phone — never sold, never shared with advertisers.</p>
+  <div class="trial-badge">🎉 14-day free trial &mdash; no credit card required</div>
+
   <div class="features">
-    <div class="feat"><h3>🚗 Auto-start with Bluetooth</h3><p>Connects to your car. Recording starts the moment you drive.</p></div>
-    <div class="feat"><h3>📍 Station-based detection</h3><p>Set your pickup station once — trips start and end automatically as you arrive and depart.</p></div>
-    <div class="feat"><h3>📄 IRS dynamic rate exports</h3><p>Always uses the current-year IRS mileage rate. One tap generates a CSV mileage log for tax time.</p></div>
-    <div class="feat"><h3>☁️ Secure Google Drive backup</h3><p>Optional backup goes straight to your own Drive — never through our servers.</p></div>
-    <div class="feat"><h3>🏠 Smart Monitor</h3><p>Saves your home location. Recording starts automatically when you drive away.</p></div>
-    <div class="feat"><h3>🅿️ Parking Save</h3><p>Pins your exact parking spot every time so you can always find your car.</p></div>
+    <div class="feat">
+      <h3>🚗 Bluetooth auto-start</h3>
+      <p>Pair your car once. Recording starts the moment you connect — even with the app closed.</p>
+    </div>
+    <div class="feat">
+      <h3>📍 Station-based detection</h3>
+      <p>Set your pickup station once. FlexMileage trims your commute miles automatically.</p>
+    </div>
+    <div class="feat">
+      <h3>📄 IRS-ready tax exports</h3>
+      <p>Rates update automatically each year. One tap generates a compliant CSV mileage log.</p>
+    </div>
+    <div class="feat">
+      <h3>☁️ Secure Google Drive backup</h3>
+      <p>Backup goes straight to your own Drive. Never through our servers.</p>
+    </div>
+    <div class="feat">
+      <h3>🏠 Smart Monitor</h3>
+      <p>No Bluetooth? Save your home location and trips start automatically when you drive away.</p>
+    </div>
+    <div class="feat">
+      <h3>🅿️ Parking save</h3>
+      <p>Pins your exact spot every trip so you never lose your car again.</p>
+    </div>
   </div>
-  <a class="badge" href="https://play.google.com/store/apps/details?id=com.flexmileage.app">Download on Google Play</a>
-  <div class="pricing">$4.99/month or $39.99/year after trial &middot; Cancel anytime in Google Play</div>
-  <div class="legal-links">
+
+  <div class="cta-wrap">
+    <a class="badge" href="https://play.google.com/store/apps/details?id=com.flexmileage.app">Download on Google Play</a>
+    <div class="pricing">$4.99/month or $39.99/year after trial &middot; Cancel anytime via Google Play</div>
+  </div>
+
+  <footer>
+    © 2026 My Digital LLC
+    <br><br>
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms of Service</a>
-  </div>
+  </footer>
 </div>
-<footer>© 2026 My Digital LLC. All rights reserved.</footer>
 </body>
 </html>
