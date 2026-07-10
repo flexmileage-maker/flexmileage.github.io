@@ -1,136 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Service — FlexMileage</title>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Terms of Service | FlexMileage — Mileage Tracker for Gig Drivers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-border": "#2E323A",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#2c1600",
+                    "tertiary-container": "#04beff",
+                    "outline-variant": "#554434",
+                    "surface": "#10131a",
+                    "tertiary": "#8ed5ff",
+                    "on-primary": "#4a2800",
+                    "surface-container": "#1d2026",
+                    "secondary-container": "#a16500",
+                    "inverse-on-surface": "#2e3037",
+                    "secondary": "#ffb961",
+                    "on-tertiary-fixed-variant": "#004c69",
+                    "outline": "#a38d7a",
+                    "surface-container-low": "#191c22",
+                    "on-secondary-fixed-variant": "#663e00",
+                    "primary-container": "#ff9900",
+                    "tertiary-fixed-dim": "#7cd0ff",
+                    "surface-bright": "#363940",
+                    "secondary-fixed": "#ffddb9",
+                    "text-muted": "#6B7280",
+                    "surface-container-lowest": "#0b0e14",
+                    "on-primary-fixed-variant": "#693c00",
+                    "on-background": "#e1e2eb",
+                    "tertiary-fixed": "#c4e7ff",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#ffdcbd",
+                    "primary-fixed-dim": "#ffb86f",
+                    "surface-variant": "#32353c",
+                    "on-secondary-fixed": "#2b1700",
+                    "on-tertiary-fixed": "#001e2c",
+                    "primary": "#ffc082",
+                    "text-secondary": "#A0A0A0",
+                    "inverse-surface": "#e1e2eb",
+                    "background": "#10131a",
+                    "surface-elevated": "#1A1D24",
+                    "text-primary": "#FFFFFF",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb961",
+                    "error-container": "#93000a",
+                    "on-tertiary": "#00344a",
+                    "on-secondary": "#472a00",
+                    "surface-tint": "#ffb86f",
+                    "surface-container-highest": "#32353c",
+                    "on-primary-container": "#653a00",
+                    "on-surface-variant": "#dbc2ad",
+                    "on-surface": "#e1e2eb",
+                    "inverse-primary": "#8a5100",
+                    "surface-dim": "#10131a",
+                    "on-tertiary-container": "#004965",
+                    "surface-container-high": "#272a31",
+                    "on-secondary-container": "#fff7f2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "gutter": "16px",
+                    "max-width": "1200px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "label-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
 <style>
-  :root {
-    --bg: #0B0E14;
-    --card: #141821;
-    --border: #232838;
-    --text: #E8E9ED;
-    --text-muted: #9CA3AF;
-    --amber: #FFB454;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.65;
-  }
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 48px 24px 96px;
-  }
-  .eyebrow {
-    color: var(--amber);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  h1 {
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin: 0 0 4px;
-  }
-  .updated {
-    color: var(--text-muted);
-    font-size: 14px;
-    margin-bottom: 36px;
-  }
-  h2 {
-    font-size: 19px;
-    font-weight: 700;
-    margin: 40px 0 12px;
-    color: var(--text);
-  }
-  p { color: var(--text-muted); font-size: 15.5px; margin: 0 0 14px; }
-  .warn {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--amber);
-    border-radius: 8px;
-    padding: 16px 18px;
-    font-size: 13.5px;
-    color: var(--text-muted);
-  }
-  a { color: var(--amber); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .back {
-    display: inline-block;
-    margin-bottom: 32px;
-    color: var(--text-muted);
-    font-size: 14px;
-  }
-  footer {
-    margin-top: 56px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--text-muted);
-    font-size: 13px;
-  }
-</style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #10131a;
+            color: #e1e2eb;
+            scroll-behavior: smooth;
+        }
+        .legal-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+            border-left: 4px solid #ff9900;
+            padding-left: 1rem;
+        }
+        .legal-content p {
+            margin-bottom: 1rem;
+            color: #A0A0A0;
+            line-height: 1.7;
+        }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            background-color: rgba(16, 19, 26, 0.8);
+        }
+    </style>
 </head>
-<body>
-<div class="wrap">
-  <a class="back" href="index.html">&larr; FlexMileage</a>
-  <div class="eyebrow">Legal</div>
-  <h1>Terms of Service</h1>
-  <div class="updated">Last updated: June 2026</div>
-
-  <p>These Terms of Service ("Terms") govern your use of FlexMileage ("the App"), developed and operated by My Digital LLC ("we," "us," "our"), published on Google Play under the developer name My Digital Studio. By downloading, installing, or using the App, you agree to these Terms.</p>
-
-  <h2>1. Description of Service</h2>
-  <p>FlexMileage is a mileage and expense tracking tool designed to help commercial drivers (gig delivery, rideshare, and similar work) record trips and calculate potential tax deductions. The App is a tracking tool, not a substitute for professional tax or legal advice.</p>
-
-  <h2>2. Subscription Plans and Free Trial</h2>
-  <p>FlexMileage offers a 14-day free trial with full access to all features, requiring no payment information to begin. After the trial period ends, continued use of trip tracking, automatic Bluetooth and station-based trip detection, manual trip entry, and Google Drive backup requires an active paid subscription.</p>
-  <p>Subscription plans are billed monthly ($4.99/month) or annually ($39.99/year) through Google Play Billing. Subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before the renewal date. You can manage or cancel your subscription at any time through your Google Play account settings &mdash; the App itself does not have the ability to cancel a subscription directly, as billing is handled entirely by Google.</p>
-
-  <h2>3. Read-Only Mode</h2>
-  <p>If your free trial ends without a subscription, or if a subscription lapses, the App enters Read-Only Mode. In this mode you retain full access to view your historical trip and expense records and may export your data as a CSV file at any time. New trip tracking &mdash; including manual start, Bluetooth auto-start, and station-based auto-start &mdash; is paused until an active subscription is restored. We do not delete or restrict access to data you've already recorded due to a lapsed subscription.</p>
-
-  <h2>4. Accuracy Disclaimer</h2>
-  <p>Mileage calculations are based on GPS data and are estimates. GPS accuracy can vary due to device hardware, signal conditions, tunnels, parking garages, and other environmental factors. While we strive for accuracy, FlexMileage cannot guarantee that recorded mileage exactly matches actual distance driven. You are responsible for reviewing your trip records for reasonableness before relying on them for tax filing purposes.</p>
-
-  <h2>5. Not Tax or Legal Advice</h2>
-  <p>FlexMileage provides tools to help organize mileage and expense records. Nothing in the App constitutes tax, legal, financial, or accounting advice. IRS mileage rates displayed in the App are sourced from official IRS publications but are provided for convenience only. You should consult a qualified tax professional before relying on any records generated by the App for tax filing, audit defense, or financial decision-making.</p>
-
-  <h2>6. Acceptable Use</h2>
-  <p>The App is intended for tracking your own commercial driving activity. You agree not to use the App to track the movement of another person without their knowledge and consent, attempt to reverse-engineer or extract the App's source code, or use the App for any unlawful purpose.</p>
-
-  <h2>7. Account and Data</h2>
-  <p>FlexMileage does not require account creation to use core features. If you choose to enable Google Drive backup, that connection is governed by Google's own Terms of Service in addition to these Terms. You are responsible for maintaining the security of the device on which the App is installed, as trip and expense data is stored locally.</p>
-
-  <h2>8. Third-Party Services</h2>
-  <p>The App uses RevenueCat for subscription management and Google Play Billing for payment processing. Use of these services is subject to their respective terms: <a href="https://www.revenuecat.com/terms" target="_blank">RevenueCat</a> and <a href="https://play.google.com/intl/en-us_us/about/play-terms" target="_blank">Google Play</a>.</p>
-
-  <h2>9. Termination</h2>
-  <p>You may stop using the App and delete it from your device at any time. We reserve the right to suspend access to the App in cases of abuse, fraud, or violation of these Terms.</p>
-
-  <h2>10. Disclaimer of Warranties</h2>
-  <div class="warn">THE APP IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APP WILL BE ERROR-FREE OR THAT MILEAGE CALCULATIONS WILL BE PERFECTLY ACCURATE.</div>
-
-  <h2>11. Limitation of Liability</h2>
-  <div class="warn">TO THE MAXIMUM EXTENT PERMITTED BY LAW, MY DIGITAL LLC AND ITS DEVELOPERS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING FROM YOUR USE OF THE APP, INCLUDING BUT NOT LIMITED TO LOST TAX DEDUCTIONS, AUDIT OUTCOMES, OR DATA LOSS. OUR TOTAL LIABILITY FOR ANY CLAIM RELATED TO THE APP SHALL NOT EXCEED THE AMOUNT YOU PAID IN SUBSCRIPTION FEES IN THE TWELVE MONTHS PRECEDING THE CLAIM.</div>
-
-  <h2>12. Changes to These Terms</h2>
-  <p>We may update these Terms from time to time. Continued use of the App after changes take effect constitutes acceptance of the revised Terms. Material changes will be communicated within the App.</p>
-
-  <h2>13. Governing Law</h2>
-  <p>These Terms are governed by the laws of the State of Tennessee, United States, without regard to conflict of law principles. My Digital LLC is organized under the laws of that state.</p>
-
-  <h2>14. Contact</h2>
-  <p>Questions about these Terms can be sent through the Contact Us link in Settings, or via the contact form linked from the App.</p>
-
-  <footer>© 2026 My Digital LLC &mdash; FlexMileage &mdash; <a href="privacy.html">Privacy Policy</a></footer>
+<body class="font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-header border-b border-surface-border">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-max-width mx-auto">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-extrabold text-primary">
+<span class="text-text-primary">Flex</span>Mileage
+                </span>
 </div>
-</body>
-</html>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">Features</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">Pricing</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-lg text-label-lg" href="#">Terms</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity" data-icon="help">help</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-4xl mx-auto">
+<!-- Hero Header Section -->
+<div class="mb-12">
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Legal Documentation</p>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-text-primary mb-4">Terms of Service</h1>
+<div class="flex items-center gap-4 text-text-secondary border-b border-surface-border pb-8">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm">Last Updated: July 2026</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified_user">verified_user</span>
+<span class="font-label-sm text-label-sm">Version 2.1</span>
+</div>
+</div>
+</div>
+<!-- Content Bento Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Legal Text Container -->
+<div class="md:col-span-8 bg-surface-elevated border border-surface-border rounded-xl p-8 legal-content shadow-xl">
+<section id="acceptance">
+<h2 class="font-headline-md text-headline-md">1. Acceptance of Terms</h2>
+<p>By accessing or using the FlexMileage mobile application and services (the "Service"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Service. These terms constitute a legally binding agreement between you and FlexMileage regarding your use of the platform.</p>
+</section>
+<section id="description">
+<h2 class="font-headline-md text-headline-md">2. Service Description</h2>
+<p>FlexMileage provides a professional utility designed for gig economy drivers and small business owners. Our features include:</p>
+<ul class="list-disc ml-6 mb-4 text-text-secondary space-y-2">
+<li><strong>Automatic Mileage Tracking:</strong> High-precision GPS tracking that logs business trips without manual intervention.</li>
+<li><strong>IRS-Ready Reports:</strong> Generation of detailed logs that comply with Internal Revenue Service documentation requirements.</li>
+<li><strong>All 4 IRS Categories:</strong> Business, medical, charitable, and military move mileage — all tracked with correct IRS rates.</li>
+<li><strong>Local-First Storage:</strong> For maximum privacy, your trip data is stored on your mobile device. No account required.</li>
+</ul>
+</section>
+<section id="subscriptions">
+<h2 class="font-headline-md text-headline-md">3. Subscriptions and Payments</h2>
+<p>FlexMileage offers a free 14-day trial for all new users to experience the full feature set. Following the trial period, continued use requires a paid subscription.</p>
+<div class="bg-surface-container-low border border-primary/20 rounded-lg p-6 mb-4 flex flex-col md:flex-row gap-6 justify-around items-center">
+<div class="text-center">
+<span class="block font-label-sm text-label-sm text-text-secondary uppercase">Monthly Plan</span>
+<span class="font-headline-md text-headline-md text-primary">$4.99/mo</span>
+</div>
+<div class="h-px w-full md:w-px md:h-12 bg-surface-border"></div>
+<div class="text-center">
+<span class="block font-label-sm text-label-sm text-text-secondary uppercase">Annual Plan</span>
+<span class="font-headline-md text-headline-md text-primary">$39.99/yr</span>
+<span class="block text-[10px] text-secondary">SAVE 33%</span>
+</div>
+</div>
+<p>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period. Payments are processed via your mobile device's app store account.</p>
+</section>
+<section id="privacy">
+<h2 class="font-headline-md text-headline-md">4. User Privacy</h2>
+<p>We operate on a "Privacy by Design" philosophy. Your location data and trip history are stored locally on your device and are never sold to third parties. We do not maintain centralized cloud storage of your movements.</p>
+<p><strong>Optional Backup:</strong> You may choose to enable optional Google Drive backup. In this case, your data is stored directly within your personal Google Drive account — not on FlexMileage servers.</p>
+</section>
+<section id="prohibited">
+<h2 class="font-headline-md text-headline-md">5. Prohibited Uses</h2>
+<p>You agree not to use the Service for any unlawful purpose or in any way that interrupts, damages, or impairs the Service. Prohibited activities include attempting to reverse engineer the application, using the Service to track individuals without their consent, or submitting fraudulent data for tax purposes.</p>
+</section>
+<section id="liability">
+<h2 class="font-headline-md text-headline-md">6. Limitation of Liability</h2>
+<p>FlexMileage is a data-logging tool. While we strive for 100% accuracy, the driver remains responsible for verifying all logs before submitting them for tax or reimbursement purposes. FlexMileage is not responsible for any tax penalties, loss of data, or legal disputes arising from the use of our tracking software.</p>
+</section>
+<section id="changes">
+<h2 class="font-headline-md text-headline-md">7. Changes to Terms</h2>
+<p>We reserve the right to modify these terms at any time. We will notify users of significant changes via app notifications or email. Your continued use of FlexMileage after such modifications constitutes your acceptance of the new terms.</p>
+</section>
+</div>
+<!-- Sticky Sidebar Navigation -->
+<aside class="md:col-span-4 h-fit md:sticky md:top-24 space-y-gutter">
+<div class="bg-surface-elevated border border-surface-border rounded-xl p-6">
+<h3 class="font-label-lg text-label-lg text-text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="toc">toc</span>
+                            Quick Navigation
+                        </h3>
+<nav class="flex flex-col gap-3">
+<a class="text-text-secondary hover:text-primary font-label-sm text-label-sm transition-colors py-1" href="#acceptance">1. Acceptance of Terms</a>
+<a class="text-text-secondary hover:text-primary font-label-sm text-label-sm transition-colors py-1" href="#description">2. Service Description</a>
+<a class="text-text-secondary hover:text-primary font-label-sm text-label-sm transition-colors py-1" href="#subscriptions">3. Payments</a>
+<a class="text-text-secondary hover:text-primary font-label-sm text-label-sm transition-colors py-1" href="#privacy">4. Privacy</a>
+<a class="text-text-secondary hover:text-primary font-label-sm text-label-sm transition-colors py-1" href="#prohibited">5. Prohibited Uses</a>
+<a class="text-text-secondary hover:text-primary font-label-sm text-label-sm transition-colors py-1" href="#liability">6. Liability</a>
+</nav>
+</div>
+<div class="bg-primary-container/10 border border-primary/20 rounded-xl p-6">
+<h3 class="font-label-lg text-label-lg text-primary mb-2">Need Help?</h3>
+<p class="font-body-md text-label-sm text-text-secondary mb-4">Questions about these terms? Our legal support team is available to assist gig drivers 24/7.</p>
+<button class="w-full bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 rounded-lg hover:opacity-90 transition-all flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+                            Contact Support
+                        </button>
+</div>
+<div class="relative rounded-xl overflow-hidden h-48 border border-surface-border">
+<div class="w-full h-full bg-cover bg-center" data-alt="A macro close-up of a high-tech dashboard in a dark luxury car at night, featuring glowing orange amber lights and sharp geometric interfaces. The lighting is sophisticated with high contrast between deep charcoals and vibrant amber highlights. The mood is professional, secure, and technologically advanced, echoing the premium FlexMileage brand aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMsOnLO_IBWEdULFG_ef1xgcd7ZWwH9y0tIR4tujbR9T06rosE-AOVkcnf53NNaxUiZSHJK061HY4sjzbEa3WtzSrKwqCquBrfjfs5wfYVLNNjaTELvl45ebj61zD_1Pf0J9Se4Si4Qw1i8BnbAjS0rXzgFi_KU0GRm-QTWxhAVkO3bM5aJDFkqQSII0ORpPgsV2siF6pFJuDKtxd0BScetk3N4gqFNeE4col15PYdsDR1QHmHgSs23YfL37Rr_g-nKNHqd7kg16U')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4">
+<span class="font-label-sm text-label-sm text-white font-bold px-2 py-1 bg-primary rounded">Drive with Trust</span>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-surface-border mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-base px-margin-mobile md:px-margin-desktop w-full max-w-max-width mx-auto">
+<div class="flex flex-col gap-2 items-center md:items-start">
+<span class="font-headline-md text-headline-md text-primary font-bold">
+<span class="text-text-primary">Flex</span>Mileage
+                </span>
+<p class="font-body-md text-label-sm text-text-secondary max-w-xs text-center md:text-left">
+                    Professional mileage tracking for gig economy drivers.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-6 my-6 md:my-0">
+<a class="font-label-sm text-label-sm text-primary underline" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-text-secondary hover:text-primary transition-colors" href="#">Contact Support</a>
+<a class="font-label-sm text-label-sm text-text-secondary hover:text-primary transition-colors" href="#">Security</a>
+<a class="font-label-sm text-label-sm text-text-secondary hover:text-primary transition-colors" href="#">Accessibility</a>
+</div>
+<div class="text-center md:text-right">
+<p class="font-label-sm text-label-sm text-text-secondary">
+                    © 2026 My Digital LLC. All rights reserved.
+                </p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple smooth scroll active state observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('aside nav a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-primary');
+                    link.classList.add('text-text-secondary');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('text-primary');
+                        link.classList.remove('text-text-secondary');
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>
