@@ -1,158 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "text-muted": "#6B7280",
+                            "surface-container-lowest": "#0b0e14",
+                            "secondary-fixed": "#ffddb9",
+                            "on-secondary-fixed-variant": "#663e00",
+                            "outline": "#a38d7a",
+                            "on-tertiary-fixed-variant": "#004c69",
+                            "surface-container-low": "#191c22",
+                            "primary-container": "#ff9900",
+                            "surface-bright": "#363940",
+                            "tertiary-fixed-dim": "#7cd0ff",
+                            "surface": "#10131a",
+                            "tertiary": "#8ed5ff",
+                            "inverse-on-surface": "#2e3037",
+                            "secondary": "#ffb961",
+                            "surface-container": "#1d2026",
+                            "on-primary": "#4a2800",
+                            "secondary-container": "#a16500",
+                            "surface-border": "#2E323A",
+                            "on-error": "#690005",
+                            "tertiary-container": "#04beff",
+                            "outline-variant": "#554434",
+                            "on-primary-fixed": "#2c1600",
+                            "inverse-primary": "#8a5100",
+                            "on-surface": "#e1e2eb",
+                            "on-surface-variant": "#dbc2ad",
+                            "on-secondary-container": "#fff7f2",
+                            "surface-container-high": "#272a31",
+                            "surface-dim": "#10131a",
+                            "on-tertiary-container": "#004965",
+                            "error-container": "#93000a",
+                            "text-primary": "#FFFFFF",
+                            "on-error-container": "#ffdad6",
+                            "secondary-fixed-dim": "#ffb961",
+                            "surface-tint": "#ffb86f",
+                            "on-primary-container": "#653a00",
+                            "surface-container-highest": "#32353c",
+                            "on-secondary": "#472a00",
+                            "on-tertiary": "#00344a",
+                            "text-secondary": "#A0A0A0",
+                            "primary": "#ffc082",
+                            "inverse-surface": "#e1e2eb",
+                            "surface-elevated": "#1A1D24",
+                            "background": "#10131a",
+                            "primary-fixed-dim": "#ffb86f",
+                            "on-background": "#e1e2eb",
+                            "on-primary-fixed-variant": "#693c00",
+                            "primary-fixed": "#ffdcbd",
+                            "tertiary-fixed": "#c4e7ff",
+                            "error": "#ffb4ab",
+                            "on-secondary-fixed": "#2b1700",
+                            "on-tertiary-fixed": "#001e2c",
+                            "surface-variant": "#32353c"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                        },
+                        "spacing": {
+                            "max-width": "1200px",
+                            "margin-desktop": "64px",
+                            "base": "8px",
+                            "margin-mobile": "20px",
+                            "gutter": "16px"
+                        },
+                        "fontFamily": {
+                            "headline-lg": ["Montserrat"],
+                            "label-sm": ["Inter"],
+                            "headline-lg-mobile": ["Montserrat"],
+                            "body-md": ["Inter"],
+                            "body-lg": ["Inter"],
+                            "headline-md": ["Montserrat"],
+                            "display-lg": ["Montserrat"],
+                            "label-lg": ["Inter"]
+                        },
+                        "fontSize": {
+                            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                            "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                            "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<meta charset="utf-8"/>
 <title>FlexMileage — Mileage Tracker for Gig Drivers</title>
-<style>
-  :root {
-    --bg: #0B0E14;
-    --card: #141821;
-    --border: #232838;
-    --text: #E8E9ED;
-    --text-muted: #9CA3AF;
-    --amber: #FFB454;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-  }
-  .wrap { max-width: 680px; margin: 0 auto; padding: 64px 24px 80px; text-align: center; }
-
-  .eyebrow {
-    color: var(--amber);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  h1 {
-    font-size: 42px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin: 0 0 4px;
-    color: var(--text);
-  }
-  h1 span { color: var(--amber); }
-  .sub {
-    color: var(--text-muted);
-    font-size: 17px;
-    margin: 0 auto 16px;
-    max-width: 500px;
-  }
-  .trial-badge {
-    display: inline-block;
-    background: #FFB45415;
-    border: 1px solid #FFB45440;
-    color: var(--amber);
-    font-size: 13px;
-    font-weight: 700;
-    padding: 6px 18px;
-    border-radius: 20px;
-    margin-bottom: 48px;
-  }
-
-  .features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    text-align: left;
-    margin: 0 0 48px;
-  }
-  @media (max-width: 480px) { .features { grid-template-columns: 1fr; } }
-  .feat {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px;
-  }
-  .feat h3 { margin: 0 0 6px; color: var(--amber); font-size: 14px; }
-  .feat p  { margin: 0; color: var(--text-muted); font-size: 13.5px; line-height: 1.55; }
-
-  .cta-wrap { margin-bottom: 12px; }
-  .badge {
-    display: inline-block;
-    background: var(--amber);
-    color: #000;
-    padding: 16px 36px;
-    border-radius: 12px;
-    font-weight: 800;
-    font-size: 16px;
-    text-decoration: none;
-    letter-spacing: 0.01em;
-  }
-  .badge:hover { opacity: 0.9; }
-  .pricing { color: var(--text-muted); font-size: 13px; margin-top: 10px; }
-
-  footer {
-    margin-top: 56px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--text-muted);
-    font-size: 13px;
-  }
-  footer a { color: var(--amber); text-decoration: none; margin: 0 10px; }
-  footer a:hover { text-decoration: underline; }
-</style>
 </head>
-<body>
-<div class="wrap">
-  <div class="eyebrow">Mileage Tracking for Gig Drivers</div>
-  <h1>Flex<span>Mileage</span></h1>
-  <p class="sub">Automatic mileage tracking built for commercial drivers. Your data stays on your phone — never sold, never shared with advertisers.</p>
-  <div class="trial-badge">🎉 14-day free trial &mdash; no credit card required</div>
-
-  <div class="features">
-    <div class="feat">
-      <h3>🚗 Bluetooth auto-start</h3>
-      <p>Pair your car once. Recording starts the moment you connect — even with the app closed.</p>
-    </div>
-    <div class="feat">
-      <h3>📍 Station-based detection</h3>
-      <p>Set your pickup station once. FlexMileage trims your commute miles automatically.</p>
-    </div>
-    <div class="feat">
-      <h3>📄 IRS-ready tax exports</h3>
-      <p>Rates update automatically each year. One tap generates a compliant CSV mileage log.</p>
-    </div>
-    <div class="feat">
-      <h3>☁️ Secure Google Drive backup</h3>
-      <p>Backup goes straight to your own Drive. Never through our servers.</p>
-    </div>
-    <div class="feat">
-      <h3>📍 Smart Monitor</h3>
-      <p>Pin your station location for accurate trip context. Start tracking with one tap or automatically via Bluetooth.</p>
-    </div>
-    <div class="feat">
-      <h3>🅿️ Parking save</h3>
-      <p>Pins your exact spot every trip so you never lose your car again.</p>
-    </div>
-  </div>
-
-  <div class="cta-wrap">
-    <a class="badge" href="https://play.google.com/store/apps/details?id=com.mydigitalstudio.flexmileage">Download on Google Play</a>
-    <div class="pricing">$4.99/month or $39.99/year after trial &middot; Cancel anytime via Google Play</div>
-  </div>
-
-  <div style="max-width:600px;margin:40px auto;padding:24px;background:#1a1f2e;border-radius:12px;text-align:center;">
-    <h2 style="color:#fff;margin-bottom:8px;">🗑️ Request Data Deletion</h2>
-    <p style="color:#aaa;margin-bottom:16px;">FlexMileage stores all trip data locally on your device — not on our servers. To delete your data, simply uninstall the app from your phone. This permanently removes all trips, settings, and locally stored information.</p>
-    <p style="color:#aaa;margin-bottom:16px;">If you used Google Drive backup, open Google Drive → tap the menu → Settings → Manage apps → FlexMileage → Delete app data.</p>
-    <p style="color:#aaa;margin-bottom:20px;">If you have additional questions or need assistance, contact us below and we'll respond within 2 business days.</p>
-    <a href="https://formspree.io/f/mlgzkryr" style="display:inline-block;background:#c9a84c;color:#0b0e14;padding:12px 28px;border-radius:8px;font-weight:700;text-decoration:none;font-size:15px;">Contact Us to Request Deletion</a>
-  </div>
-
-  <footer>
-    © 2026 My Digital LLC
-    <br><br>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-  </footer>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface/80 backdrop-blur-md border-b border-surface-border">
+<div class="flex items-center gap-2">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary"><span class="text-white">Flex</span><span class="text-primary-container">Mileage</span></span>
 </div>
-</body>
-</html>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#features">Features</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#pricing">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="https://flexmileage-maker.github.io/flexmileage.github.io/privacy.html">Privacy</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-lg text-label-lg font-bold active:scale-95 transition-transform hover:brightness-110">
+            Download
+        </button>
+</nav>
+<main class="pt-24 pb-12">
+<!-- Hero Section -->
+<header class="relative px-margin-mobile md:px-margin-desktop py-16 md:py-24 flex flex-col items-center text-center max-w-max-width mx-auto overflow-hidden">
+<div class="absolute inset-0 -z-10 opacity-20"></div>
+<span class="text-primary font-bold tracking-widest uppercase mb-4 font-label-lg text-label-lg">Mileage Tracking for Gig Drivers</span>
+<h1 class="font-display-lg text-display-lg md:text-[64px] mb-6 leading-tight max-w-4xl text-gradient">
+                Track every mile.<br class="hidden md:block"/> Claim every dollar.
+            </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mb-10">
+                Automatic mileage tracking for gig drivers — Amazon Flex, DoorDash, Uber Eats, rideshare, and more. Business, medical, charitable, and military miles tracked in one app. Your data never leaves your phone.
+            </p>
+<div class="bg-surface-container-high border border-primary/30 px-6 py-3 rounded-full flex items-center gap-3 mb-12">
+<span class="text-lg">🎉</span>
+<span class="text-on-surface font-semibold font-label-lg text-label-lg">14-day free trial — no credit card required</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<a class="group relative bg-primary-container text-on-primary-container px-10 py-5 rounded-xl font-headline-md text-headline-md font-bold flex items-center gap-4 transition-all hover:shadow-[0_0_30px_rgba(255,153,0,0.4)] active:scale-95" href="https://play.google.com/store/apps/details?id=com.mydigitalstudio.flexmileage">
+<span class="material-symbols-outlined" data-weight="fill">download</span>
+                    Download on Google Play
+                </a>
+<p class="text-text-muted text-label-sm font-label-sm">
+                    $4.99/month or $39.99/year after trial • Cancel anytime
+                </p>
+</div>
+</header>
+<!-- Features Showcase -->
+<section class="px-margin-mobile md:px-margin-desktop py-20 max-w-max-width mx-auto" id="features">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Powerful Features for Professional Drivers</h2>
+<div class="w-24 h-1 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<!-- Core Tracking -->
+<div class="mb-20">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">route</span>
+<h3 class="font-headline-md text-headline-md">Core Tracking</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bento-card bg-surface-elevated border border-surface-border p-8 rounded-2xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">bluetooth</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-3">Bluetooth Auto-Start</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Pair once. Recording starts the moment your car connects—even with the app closed. Never miss a single deductible mile again.</p>
+</div>
+<div class="bento-card bg-surface-elevated border border-surface-border p-8 rounded-2xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-3">⚡ Flex Mode</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Built for Amazon Flex and multi-stop drivers. Automatically trims your commute miles when you leave your station. Keeps your trip alive when your car turns off between stops. Stops recording at your last destination.</p>
+</div>
+</div>
+</div>
+<!-- Smart Management -->
+<div class="mb-20">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">settings_suggest</span>
+<h3 class="font-headline-md text-headline-md">Smart Management</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bento-card bg-surface-elevated border border-surface-border p-8 rounded-2xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">sensors</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-3">📍 Smart Monitor</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">No Bluetooth? No problem. Arm Smart Monitor at your station and it auto-records the moment you drive away. Returns to your starting point and your trip saves automatically.</p>
+</div>
+<div class="bento-card bg-surface-elevated border border-surface-border p-8 rounded-2xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">receipt_long</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-3">Expense Tracking</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Don't just track miles. Log every business expense including phone bills, supplies, vehicle maintenance, and parking fees in one place.</p>
+</div>
+</div>
+</div>
+<!-- IRS & Tax Reporting -->
+<div class="mb-20">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">description</span>
+<h3 class="font-headline-md text-headline-md">IRS &amp; Tax Reporting</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-1 gap-gutter">
+<div class="bento-card bg-surface-elevated border border-surface-border p-8 rounded-2xl flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/2">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">task</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-3">IRS-Ready Reports</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">One tap generates a full IRS Publication 463 compliant mileage log. Covers all four IRS categories — business (70¢/mi), medical (21¢/mi), charitable (14¢/mi), and military moves. Rates update automatically every year. Export as PDF or CSV.</p>
+</div>
+<div class="w-full md:w-1/2 h-48 bg-surface-container rounded-xl overflow-hidden relative border border-surface-border">
+<img class="object-cover w-full h-full opacity-60" data-alt="A detailed digital spreadsheet view of a mileage log with columns for date, purpose, start/end locations, and calculated tax deduction values." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8SmLqvJDjp3CZgKtSLh9-OsaMTijm_C32xzxSFO3S0edjpb7O6xdD3EvpzsaTQYO1llO8rxZ-5ox2T_AL6_vKPgEduJC9jZSzrUPSiwCFAj3gZGzoxaduba8JnqsW7o_-reTV9k8rA9rzBlgKCpNsyS8QOQBSXRdELUGc-65Ay69jwxxYhB3d7_v2lp3zSDFxooHgFs_fx-vTps_w8YGJb1hL6nDWFvd0L2Y5dy4jrbkB63qu3yIEt3J9lGXUGWp1taxAGZ4_jdk"/>
+</div>
+</div>
+</div>
+</div>
+<!-- IRS Categories Section -->
+<div class="mb-20">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
+<h3 class="font-headline-md text-headline-md">All 4 IRS Mileage Categories</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bento-card bg-surface-elevated border border-surface-border p-8 rounded-2xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4"><span class="text-2xl">🚗</span></div>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Business</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-2">Gig delivery, rideshare, any work driving.</p>
+<p class="text-primary font-bold text-xl">70¢ / mile</p>
+</div>
+<div class="bento-card bg-surface-elevated border border-surface-border p-8 rounded-2xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4"><span class="text-2xl">🏥</span></div>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Medical</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-2">Driving to medical appointments and treatment.</p>
+<p class="text-primary font-bold text-xl">21¢ / mile</p>
+</div>
+<div class="bento-card bg-surface-elevated border border-surface-border p-8 rounded-2xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4"><span class="text-2xl">❤️</span></div>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Charitable</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-2">Volunteer driving for nonprofits and charities.</p>
+<p class="text-primary font-bold text-xl">14¢ / mile</p>
+</div>
+<div class="bento-card bg-surface-elevated border border-surface-border p-8 rounded-2xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4"><span class="text-2xl">🎖️</span></div>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Military Move</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-2">Active duty military PCS relocations.</p>
+<p class="text-primary font-bold text-xl">21¢ / mile</p>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mt-6 text-center">IRS rates update automatically every year — no app update needed.</p>
+</div>
+<!-- Privacy Section -->
+<div>
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">shield</span>
+<h3 class="font-headline-md text-headline-md">Privacy First</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bento-card bg-surface-elevated border border-surface-border p-8 rounded-2xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">no_accounts</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-3">No Account Required</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">No email. No password. No sign-up. Download and start driving. Your trip data lives on your device only — never on our servers, never shared with advertisers.</p>
+</div>
+<div class="bento-card bg-surface-elevated border border-surface-border p-8 rounded-2xl">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">cloud_sync</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-3">Secure Backup</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Own your data. Backups go straight to your personal Google Drive account. We never touch or see your sensitive trip history.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-20 bg-surface-container-low" id="pricing">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg mb-4">Simple, Transparent Pricing</h2>
+<p class="text-on-surface-variant mb-12">One low price for all features. No hidden fees.</p>
+<div class="bg-surface border border-primary-container p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary-container text-on-primary-container px-6 py-2 rounded-bl-2xl font-bold">Best Value</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="text-left">
+<h3 class="text-headline-md font-bold mb-4">Professional Plan</h3>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Unlimited Trip Tracking</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Bluetooth Auto-Start &amp; Smart Monitor</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Flex Mode — Commute Trimming</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> All 4 IRS Categories (Business, Medical, Charitable, Military)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> PDF &amp; CSV Tax Report Export</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Expense Tracking with Receipt Photos</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Google Drive Cloud Backup</li>
+</ul>
+</div>
+<div class="bg-surface-container-high p-8 rounded-2xl">
+<div class="mb-6">
+<span class="text-4xl font-bold">$39.99</span>
+<span class="text-on-surface-variant">/year</span>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-6">or $4.99/month</p>
+<div class="text-primary font-bold mb-8">14-Day Free Trial Included</div>
+<a class="block w-full bg-primary-container text-on-primary-container py-4 rounded-xl font-bold hover:brightness-110 transition-all" href="https://play.google.com/store/apps/details?id=com.mydigitalstudio.flexmileage">Start My Free Trial</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Request Data Deletion Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-20">
+<div class="max-w-[800px] mx-auto bg-surface border border-surface-border p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl">delete_forever</span>
+</div>
+<div class="relative z-10 text-center flex flex-col items-center">
+<div class="w-16 h-16 rounded-2xl bg-error-container/20 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-error text-4xl">delete</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Request Data Deletion</h2>
+<div class="space-y-6 text-on-surface-variant text-body-md font-body-md text-left md:text-center">
+<p>FlexMileage stores all trip data locally on your device — not on our servers. To delete your data, simply uninstall the app from your phone. This permanently removes all trips, settings, and locally stored information.</p>
+<div class="bg-surface-container-high p-6 rounded-xl border border-surface-border">
+<p class="font-semibold text-on-surface mb-2">If you used Google Drive backup:</p>
+<p class="text-label-lg font-label-lg opacity-80">Google Drive → Menu → Settings → Manage apps → FlexMileage → Delete app data.</p>
+</div>
+<p>If you have additional questions or need assistance, contact us below and we'll respond within 2 business days.</p>
+</div>
+<a class="mt-10 bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-label-lg text-label-lg font-bold hover:brightness-110 transition-all border border-secondary/20 flex items-center gap-3" href="https://formspree.io/f/mlgzkryr">
+<span class="material-symbols-outlined">mail</span>
+                        Contact Us to Request Deletion
+                    </a>
+</div>
+</div>
+</section>
+<!-- Map Decoration Section -->
+<section class="relative h-[400px] overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background z-10"></div>
+<div class="w-full h-full grayscale opacity-30 contrast-125" data-location="Chicago" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxdAAE-lk1R_1018Y5I9Y-lHiSKTv9dlPfGcPmBTjZIvvRqP_AuGlZtgy1v7QhJzBwtFXtsilgItUnc-Nv6GyhwSwNIjPdk5Ca2S6WlI8PXjmdCYYM0mSi0o4ks9okHRV68vFpFf_I358NOzGyzvflHnHQQT9-RaxSw85LZqTLGUEma0uitosakyKF5EvlKWgq2HYnGOqD1mVjdtldVY0hKB2KkrmxgoPBJk5MqCH5UxaL_4DvLafFcucGYHWjnhDrp2GxsMSfTtw')"></div>
+<div class="absolute inset-0 flex items-center justify-center z-20 px-margin-mobile">
+<div class="text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Track Miles. Save Money.</h2>
+<p class="text-on-surface-variant font-label-lg text-label-lg">Engineered for the modern gig economy.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-lowest border-t border-surface-border">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-headline-sm font-headline-sm font-bold text-primary"><span class="text-white">Flex</span><span class="text-primary-container">Mileage</span></span>
+<p class="text-label-sm font-label-sm text-text-muted">© 2026 My Digital LLC. All rights reserved.</p>
+</div>
+<div class="flex gap-8 items-center">
+<a class="text-text-muted hover:text-on-surface transition-colors font-label-sm text-label-sm" href="https://flexmileage-maker.github.io/flexmileage.github.io/privacy.html">Privacy Policy</a>
+<a class="text-text-muted hover:text-on-surface transition-colors font-label-sm text-label-sm" href="https://flexmileage-maker.github.io/flexmileage.github.io/terms.html">Terms of Service</a>
+<a class="text-text-muted hover:text-on-surface transition-colors font-label-sm text-label-sm" href="#">Request Data Deletion</a>
+</div>
+</footer>
+<script>
+        // Intersection observer for bento cards entry animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(card);
+        });
+    </script>
+</body></html>
